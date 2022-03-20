@@ -11,9 +11,12 @@ export default function AboutMe() {
     return (
         <Box sx={{ my: 2 }}>
             <Paper elevation={2} sx={{ p: 1 }}>
-                <Typography variant="h6" component={'div'} sx={{ fontWeight: 400, pb: 0 }} >About</Typography>
-                <Typography variant="body2" component={'span'}>{`Singaporean tech enthusiast who appreciates good design. I have a keen interest in data analytics, application development and user-centered design. 
+                <Box>
+                    <Typography variant="h6" component={'div'} sx={{ fontWeight: 400, pb: 0 }} >About</Typography>
+                    <Typography variant="body2" component={'span'}>{`Singaporean tech enthusiast who appreciates good design. I have a keen interest in data analytics, application development and user-centered design. 
                 I am also a huge fan of the One Piece manga and am always down for a cup of yuan yang peng siew dai.`}</Typography>
+                </Box>
+
             </Paper>
 
 
