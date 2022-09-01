@@ -1,6 +1,7 @@
 import { Typography, Box, Stack, AccordionSummary, AccordionDetails } from '@mui/material';
 import { ExpandMore } from '@mui/icons-material';
 import { Accordion } from '../styles/StyledComponents';
+import Image from 'next/image'
 
 export default function AccordionPanel(props) {
     function diff_year_month_day(dt1, dt2) {
@@ -45,11 +46,13 @@ export default function AccordionPanel(props) {
             >
                 <Box sx={{ p: 0, m: 0 }}>
                     {props.header
-                        ? <Typography variant="h6" component={'div'} sx={{ pb: 1,fontWeight:400 }} >{props.header}</Typography>
+                        ? <Typography variant="h6" component={'div'} sx={{ pb: 1, fontWeight: 400 }} >{props.header}</Typography>
                         : null
                     }
                     <Box sx={{ display: 'flex' }}>
-                        <img width='60' height='60' src={props.icon} alt="" />
+                        <Box width={60} height={60} minWidth={60} >
+                            <Image width={60} height={60} src={props.icon} alt="" />
+                        </Box>
                         <Stack sx={{ flexGrow: 1, pl: 1 }}>
                             <Typography variant="subtitle2" sx={{ fontWeight: 500 }} >{props.title}</Typography>
                             <Typography variant="body2" >{props.subtitle}</Typography>
@@ -59,7 +62,7 @@ export default function AccordionPanel(props) {
                 </Box>
             </AccordionSummary>
             <AccordionDetails>
-                    {props.details}
+                {props.details}
             </AccordionDetails>
         </Accordion>
     );

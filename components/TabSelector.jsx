@@ -3,9 +3,9 @@ import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { TabContext, TabPanel } from '@mui/lab';
-import AboutMe from '../pages/AboutMe';
-import Achievements from '../pages/Achievements';
-import Projects from '../pages/Projects';
+import AboutMe from './AboutMe';
+import Achievements from './Achievements';
+import Projects from './Projects';
 
 export default function TabSelector() {
     const [value, setValue] = React.useState("1");

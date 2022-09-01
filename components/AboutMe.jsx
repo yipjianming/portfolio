@@ -1,9 +1,9 @@
 import { Typography, Box, Paper } from '@mui/material';
-import SMU_Icon from '../styles/images/SMU_Icon.jfif'
-import Govtech_Icon from '../styles/images/Govtech_Icon.jfif'
-import Astar_Icon from '../styles/images/Astar_Icon.jfif'
-import SIA_Icon from '../styles/images/SIA_Icon.jfif'
-import TCS_Icon from '../styles/images/TCS_Icon.jfif'
+import SMU_Icon from '../styles/images/SMU_Icon.jpg'
+import Govtech_Icon from '../styles/images/Govtech_Icon.jpg'
+import Astar_Icon from '../styles/images/Astar_Icon.jpg'
+import SIA_Icon from '../styles/images/SIA_Icon.jpg'
+import TCS_Icon from '../styles/images/TCS_Icon.JPG'
 import CatAscii from '../components/CatAscii';
 import AccordionPanel from '../components/AccordionPanel';
 

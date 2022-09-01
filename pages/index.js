@@ -1,31 +1,32 @@
-import { ThemeProvider } from '@mui/material/styles';
-import { getDesignTokens } from './styles/Theme';
-import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
-import Navbar from './components/Navbar';
-import TabSelector from './components/TabSelector';
-import { CssBaseline, GlobalStyles, Container, Box, Typography, Grid, Avatar, IconButton, Stack, Fade } from '@mui/material';
-import ProfilePic from './styles/images/profileSquare.jpg'
+import Head from 'next/head'
+import Image from 'next/image'
+import Navbar from '../components/Navbar'
+import TabSelector from '../components/TabSelector'
+
+import { Container, Box, Typography, Grid, Avatar, IconButton, Stack, Fade } from '@mui/material';
+import ProfilePic from '../styles/images/profileSquare.jpg'
 import { Email, LinkedIn } from '@mui/icons-material';
-function App() {
-  const isDarkTheme = useSelector((state) => state.theme.darkMode);
-  const theme = useMemo(() => getDesignTokens(isDarkTheme), [isDarkTheme]);
 
-
+export default function Home() {
   return (
-    <ThemeProvider theme={theme.mui}>
-      <GlobalStyles styles={theme.global} />
-      <CssBaseline />
+    <>
+      <Head>
+        <title>Jian Ming YIP</title>
+        <meta name="description" content="Jian Ming's website. Feel free to click in!" />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <Navbar />
-
       <Container sx={{ px: 0 }}>
         <Grid container justifyContent='center' spacing={2} sx={{ pt: 2 }} >
           <Grid item xs={5} sm={3} md={2}>
             <Box sx={{ boxShadow: 3, borderRadius: '50%', border: '2px solid rgba(255,255,255,0.2)', }}>
               <Fade in={true} timeout={2000}>
-                <Avatar sx={{
-                  width: '100%', height: 'auto'
-                }} src={ProfilePic} />
+
+                <Avatar sx={{ width: '100%', height: 'auto' }} >
+                  <Image
+                    src={ProfilePic}
+                    alt=""
+                  /></Avatar>
               </Fade>
             </Box>
 
@@ -50,8 +51,6 @@ function App() {
 
         <TabSelector />
       </Container >
-    </ThemeProvider>
-  );
+    </>
+  )
 }
-
-export default App;

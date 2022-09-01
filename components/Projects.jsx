@@ -1,12 +1,13 @@
 import { Typography, Box, Paper, Divider } from '@mui/material';
-import Sephora_Icon from '../styles/images/Sephora_Icon.jfif'
-import NUHS_Icon from '../styles/images/NUHS_Icon.jfif'
+import Sephora_Icon from '../styles/images/Sephora_Icon.jpg'
+import NUHS_Icon from '../styles/images/NUHS_Icon.jpg'
 import NFT_Medium from '../styles/images/NFT_Medium.png'
 import Telegram_Medium from '../styles/images/Telegram_Medium.png'
 import SpeedLimit_App from '../styles/images/SpeedLimit_App.png'
 import BusTiming_App from '../styles/images/BusTiming_App.png'
 
 import AccordionPanel from '../components/AccordionPanel';
+import Image from 'next/image';
 
 export default function Projects() {
 
@@ -61,7 +62,10 @@ export default function Projects() {
                The article also explains how this point specific location data can be collected over time to create time-series visualizations of a Telegram user's movements.`}</Typography>
                         <Typography variant='body2' color='textSecondary' sx={{ pt: 1 }}>{`12 Feb 2022 · 2 min read`}</Typography>
                     </Box>
-                    <img width='120' height='120' src={Telegram_Medium} alt="" />
+                    <Box width={120} height={120} minWidth={120} >
+                        <Image width={120} height={120} src={Telegram_Medium} alt="" />
+                    </Box>
+
                 </Box>
 
                 <Divider />
@@ -75,7 +79,9 @@ export default function Projects() {
                          a notification is pushed via Telegram Bot to subscribers.`}</Typography>
                         <Typography variant='body2' color='textSecondary' sx={{ pt: 1 }}>{`5 Feb 2022 · 5 min read`}</Typography>
                     </Box>
-                    <img width='120' height='120' src={NFT_Medium} alt="" />
+                    <Box width={120} height={120} minWidth={120} >
+                        <Image width={120} height={120} src={NFT_Medium} alt="" />
+                    </Box>
                 </Box>
             </Paper >
 
@@ -91,7 +97,10 @@ export default function Projects() {
                         Location accuracy is improved by averaging mobile location data to reduce the effect of outliers.`}</Typography>
                         <Typography variant='body2' color='textSecondary' sx={{ pt: 1 }}>{`Apr 2020 · Removed due to Google's Location Permissions Policy`}</Typography>
                     </Box>
-                    <img width='120' height='120' src={BusTiming_App} alt="" />
+                    <Box width={120} height={120} minWidth={120} >
+                        <Image width={120} height={120} src={BusTiming_App} alt="" />
+                    </Box>
+
                 </Box>
 
                 <Divider />
@@ -103,7 +112,9 @@ export default function Projects() {
                         The application runs as a foreground service to allow it to continue its function even when minimized. This allows usage in conjunction with navigation applications.`}</Typography>
                         <Typography variant='body2' color='textSecondary' sx={{ pt: 1 }}>{`Apr 2020`}</Typography>
                     </Box>
-                    <img width='120' height='120' src={SpeedLimit_App} alt="" />
+                    <Box width={120} height={120} minWidth={120} >
+                        <Image width={120} height={120} src={SpeedLimit_App} alt="" />
+                    </Box>
                 </Box>
 
 
