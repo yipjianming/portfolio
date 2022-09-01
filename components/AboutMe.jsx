@@ -3,7 +3,7 @@ import SMU_Icon from '../styles/images/SMU_Icon.jpg'
 import Govtech_Icon from '../styles/images/Govtech_Icon.jpg'
 import Astar_Icon from '../styles/images/Astar_Icon.jpg'
 import SIA_Icon from '../styles/images/SIA_Icon.jpg'
-import TCS_Icon from '../styles/images/TCS_Icon.JPG'
+import TCS_Icon from '../styles/images/TCS_Icon.jpg'
 import CatAscii from '../components/CatAscii';
 import AccordionPanel from '../components/AccordionPanel';
 
