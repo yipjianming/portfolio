@@ -5,15 +5,15 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { toggle } from '../store/themeSlice';
-import DarkModeIcon  from '@mui/icons-material/DarkMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useTheme } from "next-themes";
 
 
 const Navbar = () => {
-    const dispatch = useDispatch();
-    const isDarkTheme = useSelector((state) => state.theme.darkMode);
+    const { resolvedTheme, setTheme } = useTheme();
 
 
 
@@ -35,8 +35,10 @@ const Navbar = () => {
 
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <IconButton value={isDarkTheme} onClick={() => dispatch(toggle())} >
-                            {isDarkTheme ? <DarkModeIcon /> : <LightModeIcon />}
+                        <IconButton
+                            onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+                        >
+                            {resolvedTheme === "light" ? <LightModeIcon /> : <DarkModeIcon />}
                         </IconButton>
                     </Box>
                 </Toolbar>

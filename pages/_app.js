@@ -1,41 +1,40 @@
 import "../styles/globals.css";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { getDesignTokens } from "../styles/theme";
 import createEmotionCache from "../utils/createEmotionCache";
 import { CacheProvider } from "@emotion/react";
 import PropTypes from 'prop-types';
-import { Provider, useSelector } from 'react-redux';
-import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from '../store/store';
-import { useMemo } from "react";
+import { ThemeProvider as PreferredThemeProvider ,useTheme} from "next-themes";
+import Head from "next/head";
+import MUIThemeProvider from "../helper/MUIThemeProvider";
+import { useEffect } from "react";
 
 const clientSideEmotionCache = createEmotionCache();
 
 const MyApp = (props) => {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) jssStyles.parentElement.removeChild(jssStyles);
+  }, []);
+
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        {() => (
-          <MyAppWithRedux {...props} />
-        )}
-      </PersistGate>
-    </Provider>
+    <PreferredThemeProvider>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <title>Jian Ming YIP</title>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+          <meta name="description" content="Jian Ming's website. Feel free to click in!" />
+          <link rel="icon" href="/logo.png" />
+        </Head>
+        <MUIThemeProvider >
+          <Component {...pageProps} />
+        </MUIThemeProvider>
+      </CacheProvider >
+    </PreferredThemeProvider >
+
   );
 };
 
-function MyAppWithRedux(props) {
-  const isDarkTheme = useSelector((state) => state.theme.darkMode);
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const theme = useMemo(() => getDesignTokens(isDarkTheme), [isDarkTheme]);
-  return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider >
-  );
-}
+
 
 export default MyApp;
 

@@ -10,11 +10,6 @@ import { Email, LinkedIn } from '@mui/icons-material';
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Jian Ming YIP</title>
-        <meta name="description" content="Jian Ming's website. Feel free to click in!" />
-        <link rel="icon" href="/logo.png" />
-      </Head>
       <Navbar />
       <Container sx={{ px: 0 }}>
         <Grid container justifyContent='center' spacing={2} sx={{ pt: 2 }} >
