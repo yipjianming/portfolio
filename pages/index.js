@@ -20,7 +20,6 @@ export default function Home() {
                 <Avatar sx={{ width: '100%', height: 'auto' }} >
                   <Image
                     src={ProfilePic}
-                    alt=""
                   /></Avatar>
               </Fade>
             </Box>

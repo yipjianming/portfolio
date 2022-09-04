@@ -4,24 +4,26 @@ import MuiAccordion from '@mui/material/Accordion';
 
 export const ComponentContainer = styled(Box)(({ theme }) =>
 ({
-    padding: `${theme.spacing(1)} ${theme.spacing(4)}`,
+  padding: `${theme.spacing(1)} ${theme.spacing(4)}`,
 }));
 
 export const CenterVertical = (props) => {
-    return <Grid container direction="column" alignItems="center" justifyContent="center"
-        sx={{ height: props.height, textAlign: 'center' }}>
-        {props.children}
-    </Grid>
+  return <Grid container direction="column" alignItems="center" justifyContent="center"
+    sx={{ height: props.height, textAlign: 'center' }}>
+    {props.children}
+  </Grid>
 }
 
 export const Accordion = styled((props) => (
-    <MuiAccordion disableGutters elevation={1} square {...props} />
-  ))(({ theme }) => ({
-    border: `1px solid ${theme.palette.divider}`,
-    '&:not(:last-child)': {
-      borderBottom: 0,
-    },
-    '&:before': {
-      display: 'none',
-    },
-  }));
+  <MuiAccordion disableGutters elevation={2} square {...props} />
+))(({ theme }) => ({
+  border: 0,
+  position: 'static'
+  // border: `1px solid ${theme.palette.divider}`,
+  // '&:not(:last-child)': {
+  //   borderBottom: 0,
+  // },
+  // '&:before': {
+  //   display: 'none',
+  // },
+}));

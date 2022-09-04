@@ -1,4 +1,4 @@
-import { Typography, Box, Paper } from '@mui/material';
+import { Typography, Box, Paper, Divider } from '@mui/material';
 import SMU_Icon from '../styles/images/SMU_Icon.jpg'
 import Govtech_Icon from '../styles/images/Govtech_Icon.jpg'
 import Astar_Icon from '../styles/images/Astar_Icon.jpg'
@@ -10,7 +10,7 @@ import AccordionPanel from '../components/AccordionPanel';
 export default function AboutMe() {
     return (
         <Box sx={{ my: 2 }}>
-            <Paper elevation={2} sx={{ p: 1 }}>
+            <Paper elevation={2} sx={{ p: 1, mb: 2 }}>
                 <Box>
                     <Typography variant="h6" component={'div'} sx={{ fontWeight: 400, pb: 0 }} >About</Typography>
                     <Typography variant="body2" component={'span'}>{`Singaporean tech enthusiast who appreciates good design. I have a keen interest in data analytics, application development and user-centered design. 
@@ -18,27 +18,27 @@ export default function AboutMe() {
                 </Box>
 
             </Paper>
-
-
-            <AccordionPanel sx={{ mt: 2 }}
-                header='Education'
-                icon={SMU_Icon}
-                title='Singapore Management University'
-                subtitle='BSc Information Systems, Double Major in Information Systems and Analytics'
-                startDate='2016'
-                endDate='2020'
-                details={<CatAscii />}
-            />
-
-
-
-            <Box sx={{ mt: 2 }}>
+            <Paper elevation={2} sx={{ mb: 2 }} >
+                <Typography variant="h6" component={'div'} sx={{ p: 1, pb: 0, fontWeight: 400 }} >Education</Typography>
                 <AccordionPanel
-                    header='Experience'
+                    icon={SMU_Icon}
+                    title='Singapore Management University'
+                    subtitle='BSc Information Systems, Double Major in Information Systems and Analytics'
+                    startDate='2016'
+                    endDate='2020'
+                    details={<CatAscii />}
+                />
+            </Paper>
+
+
+            <Paper elevation={2} sx={{ mb: 2 }} >
+                <Typography variant="h6" component={'div'} sx={{ p: 1, pb: 0, fontWeight: 400 }} >Experience</Typography>
+                <AccordionPanel
                     icon={Govtech_Icon}
                     title='Government Technology Agency'
                     subtitle='Cybersecurity Group - Software Engineer'
                     startDate='Oct 2021'
+                    borderBottom
                     details={
                         <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
                             <li>
@@ -51,13 +51,13 @@ export default function AboutMe() {
                         </ul>
                     }
                 />
-
                 <AccordionPanel
                     icon={Astar_Icon}
                     title='A*STAR - Agency for Science, Technology and Research'
                     subtitle='Institute of High Performance Computing - Research Engineer'
                     startDate='Jul 2020'
                     endDate='Sep 2021'
+                    borderBottom
                     details={
                         <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
                             <li><Typography variant='body2'>{`Utilized Geospatial Analytics to obtain insights on Landuse Data.`}</Typography></li>
@@ -74,6 +74,7 @@ export default function AboutMe() {
                     subtitle='Digital Innovation Lab - Intern'
                     startDate='May 2019'
                     endDate='Aug 2019'
+                    borderBottom
                     details={
                         <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
                             <li><Typography variant='body2'>{`Developed a data scraping tool to estimate flight arrivals accurately.`}</Typography></li>
@@ -96,8 +97,9 @@ export default function AboutMe() {
                         </ul>
                     }
                 />
+            </Paper>
 
-            </Box>
+
 
             <Paper elevation={2} sx={{ mt: 2, p: 1 }}>
                 <Typography variant="h6" component={'div'} sx={{ fontWeight: 400 }} >Skills</Typography>
@@ -112,7 +114,7 @@ export default function AboutMe() {
                     {` Geospatial, Network Science, Image, Text`}
                 </Typography>
                 <Typography variant="body1" sx={{ textDecoration: 'underline', pt: 1, fontWeight: 500 }}>Technical</Typography>
-                <Typography variant="body2" >{`React, Redux, HTML, CSS, Leaflet, Bootstrap, Material, D3.js,`}</Typography>
+                <Typography variant="body2" >{`React, Nextjs, Redux, HTML, CSS, Leaflet, Bootstrap, Material UI`}</Typography>
                 <Typography variant="body2" >{`Node.js, MongoDB, Firebase, MySQL `}</Typography>
                 <Typography variant="body2" >{`JavaScript, Python, Java, Android Kotlin, R, Ruby`}</Typography>
                 <Typography variant="body2" >{`Agile, Git, Docker, Mew, Mewtwo (:`}</Typography>
