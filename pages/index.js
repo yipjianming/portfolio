@@ -27,12 +27,13 @@ export default function Home() {
           </Grid>
         </Grid>
         <Stack spacing={0} direction="column" justifyContent="center" alignItems="center">
-          <Typography variant="h6" >
-            Jian Ming Yip
-          </Typography>
-          <Typography variant="body1" color='textSecondary' component="div" >
+          <h1 style={{ margin: 0 }} >
+            Yip Jian Ming
+          </h1>
+          <div>
             Software Developer
-          </Typography>
+          </div>
+
           <Box >
             <IconButton size='small' aria-label="LinkedIn" href='https://www.linkedin.com/in/jianmingyip' target="_blank">
               <LinkedIn />
