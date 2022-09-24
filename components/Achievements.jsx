@@ -8,7 +8,7 @@ export default function Achievements() {
     return (
         <Box sx={{ my: 2 }}>
             <Paper elevation={2} sx={{ mb: 2 }} >
-                <Typography variant="h6" component={'div'} sx={{ fontWeight: 400, p: 1, pb: 0}} >Certificates</Typography>
+                <Typography variant="h6" component={'div'} sx={{ fontWeight: 400, p: 1, pb: 0 }} >Certificates</Typography>
 
                 <Panel
                     icon={Mitre_Icon}
@@ -36,6 +36,11 @@ export default function Achievements() {
             <Paper elevation={2} sx={{ mt: 2 }}>
                 <Box sx={{ p: 1 }}>
                     <Typography variant="h6" component={'div'} sx={{ fontWeight: 400 }} >Awards</Typography>
+                    <Typography variant='body1' sx={{ pt: 1 }}>{`MSAT`}</Typography>
+                    <Typography variant='body2'>{`99th percentile`}</Typography>
+                </Box>
+                <Divider />
+                <Box sx={{ p: 1 }}>
                     <Typography variant='body1' sx={{ pt: 1 }}>{`IBM Call for Code Ideation Challenge`}</Typography>
                     <Typography variant='body2'>{`Winner · 2019`}</Typography>
                 </Box>
