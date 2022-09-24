@@ -37,7 +37,7 @@ export default function Achievements() {
                 <Box sx={{ p: 1 }}>
                     <Typography variant="h6" component={'div'} sx={{ fontWeight: 400 }} >Awards</Typography>
                     <Typography variant='body1' sx={{ pt: 1 }}>{`MSAT`}</Typography>
-                    <Typography variant='body2'>{`99th percentile`}</Typography>
+                    <Typography variant='body2'>{`99th percentile · 2022`}</Typography>
                 </Box>
                 <Divider />
                 <Box sx={{ p: 1 }}>
